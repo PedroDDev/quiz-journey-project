@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground_Bottom_Side_Layer
+    uniqueID: 4085431
+    locked: 0
+  - name: Ground_Top_Side_Layer
+    uniqueID: 3266285795
+    locked: 0
+  - name: Buildings_Layer
+    uniqueID: 3719002545
+    locked: 0
+  - name: Details_Layer
+    uniqueID: 2290856685
+    locked: 0
