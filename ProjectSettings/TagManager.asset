@@ -50,6 +50,18 @@ TagManager:
   - name: Buildings_Layer
     uniqueID: 3719002545
     locked: 0
+  - name: Map_Points_Layer
+    uniqueID: 4229565529
+    locked: 0
+  - name: Player_Layer
+    uniqueID: 1643846787
+    locked: 0
   - name: Details_Layer
     uniqueID: 2290856685
+    locked: 0
+  - name: Clouds
+    uniqueID: 1008767467
+    locked: 0
+  - name: Particles
+    uniqueID: 4177496867
     locked: 0
