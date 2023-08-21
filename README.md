@@ -1,3 +1,3 @@
-# protheus-journey-project
+# quiz-journey-project
 
-TOTVS tutorials gamification project developed using Unity Engine.
+Model of a quiz style game, using free assets and AI.
