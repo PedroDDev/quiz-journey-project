@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         
         currentMapPointIndex = 1;
 
-        currentMapPointsAvaliable = GameObject.Find("Map_Point").GetComponent<MapPoint>().mapPointsAvaliable;
+        currentMapPointsAvaliable = GameObject.Find("Map_Point_1").GetComponent<MapPoint>().mapPointsAvaliable;
 
         _anim = GetComponent<Animator>();
     }

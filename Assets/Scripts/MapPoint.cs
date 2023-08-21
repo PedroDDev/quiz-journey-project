@@ -1,14 +1,20 @@
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class MapPoint : MonoBehaviour
 {
     [SerializeField] private int mapPointIndex;
-    [SerializeField] public WayPoint mapPointsAvaliable;
     [SerializeField] private Sprite unlockedSprite;
     [SerializeField] private Sprite lockedSprite;
 
-    public bool isLocked;
+    private TMP_Text _title;
+
+    public WayPoint mapPointsAvaliable;
+    public string stageName;
+    public GameObject stageButton;
+
+    [HideInInspector] public bool isLocked;
 
     private PlayerMovement _player;
     private CircleCollider2D _col;
@@ -18,6 +24,10 @@ public class MapPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isLocked = mapPointIndex != 1;
+
+        _title = GameObject.Find("Title_Text").GetComponent<TMP_Text>();
+
         _isMouseOn = false;
         _player = GameObject.FindObjectOfType<PlayerMovement>();
         _col = GetComponent<CircleCollider2D>();
@@ -53,8 +63,26 @@ public class MapPoint : MonoBehaviour
         if (_player.currentMapPointIndex == mapPointIndex || _player.currentWaypoints.Length > 0 || !(_player.currentMapPointsAvaliable.waypoints.Any(x => x.index == mapPointIndex))) _col.enabled = false;
         else _col.enabled = true;
 
-        if (isLocked) _spr.sprite = lockedSprite;
-        else _spr.sprite = unlockedSprite;
+        if (isLocked)
+        {
+            _spr.sprite = lockedSprite;
+        }
+        else
+        {
+            _spr.sprite = unlockedSprite;
+
+            if (_player.currentMapPointIndex == mapPointIndex)
+            {
+                stageButton.SetActive(true);
+                _title.text = stageName;
+            }
+            else
+            {
+                stageButton.SetActive(false);
+            }
+
+
+        }
     }
 
     void OnMouseEnter()

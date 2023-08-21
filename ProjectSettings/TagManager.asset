@@ -53,10 +53,13 @@ TagManager:
   - name: Map_Points_Layer
     uniqueID: 4229565529
     locked: 0
+  - name: Detail_Layer_1
+    uniqueID: 2263356665
+    locked: 0
   - name: Player_Layer
     uniqueID: 1643846787
     locked: 0
-  - name: Details_Layer
+  - name: Details_Layer_2
     uniqueID: 2290856685
     locked: 0
   - name: Clouds

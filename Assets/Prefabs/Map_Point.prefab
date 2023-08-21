@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3627874740785328938}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &5603864997121729949
 CircleCollider2D:
@@ -81,14 +81,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c78203061b694499704723ca41ef13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  mapPointIndex: 2
+  mapPointIndex: 1
+  unlockedSprite: {fileID: -1772882150, guid: 3702dc5c7cbe5b04ea533d01d2231481, type: 3}
+  lockedSprite: {fileID: 1990263858, guid: 3702dc5c7cbe5b04ea533d01d2231481, type: 3}
+  mapPointsAvaliable:
+    waypoints:
+    - index: 2
+      waypoint:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  stageName: "Introdu\xE7\xE3o \xE0 LGPD"
+  stageButton: {fileID: 0}
+  isLocked: 0
 --- !u!1 &4729536612782196899
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: -65401767
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1581662495, guid: 9ee30ea88a316c047b434dcebf078249, type: 3}
+  m_Sprite: {fileID: 1990263858, guid: 3702dc5c7cbe5b04ea533d01d2231481, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
