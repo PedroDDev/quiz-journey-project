@@ -2557,6 +2557,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 390175747235891492, guid: 4b6374987124ce54890e7b8bbb96e846, type: 3}
   m_PrefabInstance: {fileID: 1399591592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &457529283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8019005495524656446, guid: b688a2e247e832f4db6e3be8b9284003, type: 3}
+  m_PrefabInstance: {fileID: 1646530962469188596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &457529287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457529283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72506325a2a76f4a8386617973c47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLife: 100
+  currentLife: 0
 --- !u!1 &468565890
 GameObject:
   m_ObjectHideFlags: 0
@@ -12739,6 +12758,116 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1687406859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687406862}
+  - component: {fileID: 1687406860}
+  m_Layer: 0
+  m_Name: Quiz_Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1687406860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687406859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0441c510c0ab0bc429568d15b51c02ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quiz:
+    tests:
+    - index: 0
+      question: O que significa a sigla LGPD?
+      answersOptions:
+      - "Lei Geral de Prote\xE7\xE3o ao Deficiente"
+      - "Lei Geral de Prote\xE7\xE3o de Dados Pessoais"
+      - "Lei Geral de Prote\xE7\xE3o aos Direitos"
+      - "Lei Geral de Prote\xE7\xE3o de Dados Virtuais"
+      correctAnswerIndex: 1
+      score: 5
+    - index: 1
+      question: "Segundo a lei, qual \xE9 a defini\xE7\xE3o de dado pessoal?"
+      answersOptions:
+      - "Informa\xE7\xF5es que t\xEAm o objetivo de identificar, contactar ou localizar
+        uma pessoa"
+      - "Informa\xE7\xF5es que t\xEAm o objetivo de caracterizar fisicamente uma
+        pessoa"
+      - "Informa\xE7\xF5es que t\xEAm o objetivo de definir a personalidade de uma
+        pessoa"
+      - "Informa\xE7\xF5es que t\xEAm o objetivo de caracterizar virtualmente uma
+        pessoa"
+      correctAnswerIndex: 0
+      score: 5
+    - index: 2
+      question: "Quais dos dados a seguir s\xE3o considerados pessoais?"
+      answersOptions:
+      - "G\xEAnero, endere\xE7o de e-mail e usu\xE1rio das redes sociais"
+      - "Data de nascimento, n\xFAmero de telefone e endere\xE7o de trabalho"
+      - "Nome e sobrenome, endere\xE7o residencial e h\xE1bitos de consumo"
+      - 
+      correctAnswerIndex: 2
+      score: 5
+    - index: 3
+      question: "Quais s\xE3o os tipos de dados existentes, segundo a classifica\xE7\xE3o
+        da LGPD?"
+      answersOptions:
+      - "Dados Pessoais, Dados Delicados, Dados P\xFAblicos, Dados Compartilh\xE1veis"
+      - "Dados Pessoais, Dados Sens\xEDveis, Dados P\xFAblicos, Dados Anonimizados"
+      - "Dados Pessoais, Dados Secretos, Dados P\xFAblicos, Dados Particulares"
+      - 
+      correctAnswerIndex: 1
+      score: 5
+    - index: 4
+      question: Em que ano essa lei entrou em vigor no Brasil?
+      answersOptions:
+      - 2020
+      - 2021
+      - 2022
+      - 2019
+      correctAnswerIndex: 0
+      score: 5
+  currentTestIndex: 0
+  questionText: {fileID: 615248676}
+  answersOptionsText:
+  - {fileID: 742613552}
+  - {fileID: 268195670}
+  - {fileID: 20692820}
+  - {fileID: 1601633417}
+  checkedBoxSprite: {fileID: 0}
+  notCheckedBoxSprite: {fileID: 0}
+  checkBoxes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!4 &1687406862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687406859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 551.0874, y: 122.924324, z: -0.37243652}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1692530359
 GameObject:
   m_ObjectHideFlags: 0
@@ -15042,7 +15171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2049449859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15464,7 +15593,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8019005495524656446, guid: b688a2e247e832f4db6e3be8b9284003, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 457529287}
   m_SourcePrefab: {fileID: 100100000, guid: b688a2e247e832f4db6e3be8b9284003, type: 3}
 --- !u!1001 &6955430396668946266
 PrefabInstance:
