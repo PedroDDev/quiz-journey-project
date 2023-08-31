@@ -1,29 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HUDController : MonoBehaviour
 {
-    public GameObject goodEndHUD;
-    public GameObject badEndHUD;
-
-    public GameObject warningPanel;
+    [SerializeField] private GameObject goodEndHUD;
+    [SerializeField] private GameObject badEndHUD;
+    [SerializeField] private GameObject warningPanel;
 
     public void ShowGoodEndHUD()
     {
         goodEndHUD.SetActive(true);
-        badEndHUD.SetActive(false);
+    }
+
+    public void HideGoodEndHUD()
+    {
+        goodEndHUD.SetActive(false);
     }
 
     public void ShowBadEndHUD()
     {
         badEndHUD.SetActive(true);
-        goodEndHUD.SetActive(false);
+    }
+
+    public void HideBadEndHUD()
+    {
+        badEndHUD.SetActive(false);
 
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-
     }
 
     public void ShowWarningPanel()
@@ -34,5 +38,10 @@ public class HUDController : MonoBehaviour
     public void HideWarningPanel()
     {
         warningPanel.SetActive(false);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

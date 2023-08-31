@@ -9,22 +9,22 @@ public class MapPoint : MonoBehaviour
     [SerializeField] private Sprite lockedSprite;
 
     private TMP_Text _title;
-
-    public WayPoint mapPointsAvaliable;
-    public string stageName;
-    public GameObject stageButton;
-
-    public bool isLocked;
-
     private PlayerMovement _player;
     private CircleCollider2D _col;
     private SpriteRenderer _spr;
     private bool _isMouseOn;
 
+    public WayPoint mapPointsAvaliable;
+
+    [SerializeField] private string stageName;
+    [SerializeField] private GameObject stageButton;
+
+    [HideInInspector] public bool isLocked;
+
     // Start is called before the first frame update
     void Start()
     {
-        // isLocked = mapPointIndex != 1;
+        isLocked = mapPointIndex != 1;
 
         _title = GameObject.Find("Title_Text").GetComponent<TMP_Text>();
 
@@ -60,7 +60,7 @@ public class MapPoint : MonoBehaviour
             }
         }
 
-        if (_player.currentMapPointIndex == mapPointIndex || _player.currentWaypoints.Length > 0 || !(_player.currentMapPointsAvaliable.waypoints.Any(x => x.index == mapPointIndex))) _col.enabled = false;
+        if (_player.currentMapPointIndex == mapPointIndex || _player.currentWaypoints.Length > 0 || !_player.currentMapPointsAvaliable.waypoints.Any(x => x.index == mapPointIndex)) _col.enabled = false;
         else _col.enabled = true;
 
         if (isLocked)
@@ -80,8 +80,6 @@ public class MapPoint : MonoBehaviour
             {
                 stageButton.SetActive(false);
             }
-
-
         }
     }
 

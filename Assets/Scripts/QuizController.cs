@@ -4,14 +4,15 @@ using UnityEngine.UI;
 
 public class QuizController : MonoBehaviour
 {
-    public GameObject Quiz_HUD;
+    [SerializeField] private GameObject Quiz_HUD;
 
-    public Test quiz;
-    public int currentTestIndex;
+    [SerializeField] private Test quiz;
+    [HideInInspector] public int currentTestIndex;
 
-    public bool startTimer;
-    public float time;
-    public float currentTime;
+    [SerializeField] private float time;
+    
+    private float _currentTime;
+    private bool _isTimerStarted;
 
     private PlayerLife _player;
 
@@ -21,6 +22,11 @@ public class QuizController : MonoBehaviour
     [SerializeField] private Sprite checkedBoxSprite;
     [SerializeField] private Sprite notCheckedBoxSprite;
     [SerializeField] private Button[] checkBoxes;
+
+    [SerializeField] private Animator hurtPanelAnimator;
+
+    [SerializeField] private GameObject goodEndPanel;
+    [SerializeField] private GameObject badEndPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -34,15 +40,15 @@ public class QuizController : MonoBehaviour
         answersOptionsText[2].text = quiz.tests[0].answersOptions[2];
         answersOptionsText[3].text = quiz.tests[0].answersOptions[3];
 
-        currentTime = time;
+        _currentTime = time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (startTimer) currentTime -= Time.deltaTime;
+        if (_isTimerStarted) _currentTime -= Time.deltaTime;
 
-        if (currentTime <= 0)
+        if (_currentTime <= 0)
         {
             SkipQuestion();
         }
@@ -60,7 +66,7 @@ public class QuizController : MonoBehaviour
             }
         }
 
-        timerText.text = ((int)currentTime).ToString();
+        timerText.text = ((int)_currentTime).ToString();
     }
 
     public void OnCheckBoxClick(int index)
@@ -88,9 +94,10 @@ public class QuizController : MonoBehaviour
             }
         }
 
-        if (currentTime <= 0)
+        if (_currentTime <= 0)
         {
             _player.currentLife -= testScore;
+            if (currentTestIndex < quiz.tests[^1].index) hurtPanelAnimator.SetTrigger("TakeDamage");
             currentTestIndex++;
         }
 
@@ -98,7 +105,12 @@ public class QuizController : MonoBehaviour
         {
             if (checkBoxes[i].image.sprite == checkedBoxSprite)
             {
-                if (i != correctAnswer) _player.currentLife -= testScore;
+                if (i != correctAnswer)
+                {
+                    _player.currentLife -= testScore;
+
+                    if (currentTestIndex < quiz.tests[^1].index) hurtPanelAnimator.SetTrigger("TakeDamage");
+                }
 
                 currentTestIndex++;
 
@@ -108,28 +120,29 @@ public class QuizController : MonoBehaviour
             }
         }
 
-        if (currentTestIndex > quiz.tests[quiz.tests.Length - 1].index)
+        if (currentTestIndex > quiz.tests[^1].index)
         {
-            var lifeToWin = (_player.maxLife * 60) / 100;
+            var lifeToWin = _player.maxLife * 60 / 100;
 
             if (_player.currentLife < lifeToWin)
             {
-                Debug.Log("Você não Passou");
+                badEndPanel.SetActive(true);
             }
             else
             {
-                Debug.Log("Você Passou");
+                goodEndPanel.SetActive(true);
             }
 
             HideHUD();
         }
 
-        currentTime = time;
+        _currentTime = time;
     }
 
     public void ShowHUD()
     {
         Quiz_HUD.SetActive(true);
+        StartTimer();
     }
 
     public void HideHUD()
@@ -139,6 +152,6 @@ public class QuizController : MonoBehaviour
 
     public void StartTimer()
     {
-        startTimer = true;
+        _isTimerStarted = true;
     }
 }

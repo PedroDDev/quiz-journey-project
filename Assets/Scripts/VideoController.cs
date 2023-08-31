@@ -3,33 +3,28 @@ using UnityEngine.Video;
 using UnityEngine.UI;
 using TMPro;
 using System;
-using UnityEngine.EventSystems;
 
-public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class VideoController : MonoBehaviour
 {
-    public VideoPlayer _videoPlayer;
+    [SerializeField] private VideoPlayer _videoPlayer;
 
     private PlayerMovement _player;
     private MapPoint _mapPoint;
 
-    public Slider slider;
-    public TMP_Text timerText;
+    [SerializeField] private Slider slider;
+    [SerializeField] private TMP_Text timerText;
 
-    public GameObject playButton;
-    public GameObject pauseButton;
-    public GameObject restartButton;
-    public GameObject maxmizeScreenButton;
-    public GameObject minimizeScreenButton;
-
-    // public GameObject muteAudioButton;
-    // public GameObject playAudioButton;
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject maxmizeScreenButton;
+    [SerializeField] private GameObject minimizeScreenButton;
 
     [SerializeField] private GameObject videoPanel;
-    public RectTransform videoArea;
 
-    private bool isChangingSlider;
+    [SerializeField] private RectTransform videoArea;
 
-    bool isDone;
+    private bool _isDone;
 
     private void Start()
     {
@@ -46,7 +41,7 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         ChangeSlider();
         ChangeTimer();
 
-        if (isDone)
+        if (_isDone)
         {
             _mapPoint = GameObject.Find($"Map_Point_{_player.currentMapPointIndex + 1}").GetComponent<MapPoint>();
             _mapPoint.isLocked = false;
@@ -87,7 +82,7 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     }
     public bool IsDone
     {
-        get { return isDone; }
+        get { return _isDone; }
     }
     public double Time
     {
@@ -118,17 +113,17 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         restartButton.SetActive(true);
         playButton.SetActive(false);
         pauseButton.SetActive(false);
-        isDone = true;
+        _isDone = true;
     }
     void PrepareCompleted(VideoPlayer v)
     {
         Debug.Log("Video player finished preparing");
-        isDone = false;
+        _isDone = false;
     }
     void SeekCompleted(VideoPlayer v)
     {
         Debug.Log("Video player finished seeking");
-        isDone = false;
+        _isDone = false;
     }
     void Started(VideoPlayer v)
     {
@@ -207,21 +202,6 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         _videoPlayer.playbackSpeed = Mathf.Clamp(_videoPlayer.playbackSpeed, 0, 10);
     }
 
-    // public void MuteAudio()
-    // {
-    //     muteAudioButton.SetActive(false);
-    //     playAudioButton.SetActive(true);
-
-    //     _videoPlayer.SetDirectAudioMute(0, true);
-    // }
-    // public void PlayAudio()
-    // {
-    //     playAudioButton.SetActive(false);
-    //     muteAudioButton.SetActive(true);
-
-    //     _videoPlayer.SetDirectAudioMute(0, false);
-    // }
-
     void ChangeTimer()
     {
         TimeSpan duration = TimeSpan.FromSeconds(Duration);
@@ -231,7 +211,7 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     }
     void ChangeSlider()
     {
-        if (!isChangingSlider) slider.value = (float)NTime;
+        slider.value = (float)NTime;
     }
 
     public void ShowPanel()
@@ -240,7 +220,7 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         restartButton.SetActive(false);
         pauseButton.SetActive(false);
         playButton.SetActive(true);
-        isDone = false;
+        _isDone = false;
 
         if (!IsPrepared) return;
 
@@ -250,7 +230,7 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public void ClosePanel()
     {
         videoPanel.SetActive(false);
-        isDone = false;
+        _isDone = false;
 
         if (!IsPrepared) return;
 
@@ -263,9 +243,6 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         maxmizeScreenButton.gameObject.SetActive(false);
         minimizeScreenButton.gameObject.SetActive(true);
 
-        // videoArea.anchorMin = new Vector2(1, 0);
-        // videoArea.anchorMax = new Vector2(0, 1);
-
         videoArea.localScale = new Vector3(1f, 1f, 1f);
         videoArea.anchoredPosition = new Vector2(0, 0);
     }
@@ -277,20 +254,5 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
         videoArea.localScale = new Vector3(0.75f, 0.75f, 1f);
         videoArea.anchoredPosition = new Vector2(0, -16);
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        PauseVideo();
-        isChangingSlider = true;
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (IsPlaying) PlayVideo();
-        else PauseVideo();
-
-        Seek(slider.value);
-        isChangingSlider = false;
     }
 }
