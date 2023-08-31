@@ -2890,8 +2890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 100
-  currentLife: 0
   healthBar: {fileID: 231878725}
+  currentLife: 0
 --- !u!1 &468565890
 GameObject:
   m_ObjectHideFlags: 0
@@ -15999,9 +15999,7 @@ MonoBehaviour:
       correctAnswerIndex: 0
       score: 20
   currentTestIndex: 0
-  isTimerStarted: 0
   time: 90
-  currentTime: 0
   questionText: {fileID: 615248676}
   timerText: {fileID: 1907139528}
   answersOptionsText:
