@@ -15,6 +15,9 @@ public class HUDController : MonoBehaviour
     public void HideGoodEndHUD()
     {
         goodEndHUD.SetActive(false);
+
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
     public void ShowBadEndHUD()
