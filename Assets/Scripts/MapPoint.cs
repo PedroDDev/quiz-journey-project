@@ -14,7 +14,7 @@ public class MapPoint : MonoBehaviour
     public string stageName;
     public GameObject stageButton;
 
-    [HideInInspector] public bool isLocked;
+    public bool isLocked;
 
     private PlayerMovement _player;
     private CircleCollider2D _col;
@@ -24,7 +24,7 @@ public class MapPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isLocked = mapPointIndex != 1;
+        // isLocked = mapPointIndex != 1;
 
         _title = GameObject.Find("Title_Text").GetComponent<TMP_Text>();
 

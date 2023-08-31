@@ -36,7 +36,7 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         _player = FindObjectOfType<PlayerMovement>();
 
         videoArea.localScale = new Vector3(0.75f, 0.75f, 1f);
-        videoArea.anchoredPosition = new Vector2(0, -16);
+        videoArea.anchoredPosition = new Vector2(-1812.085f, -16);
     }
 
     void Update()
@@ -274,9 +274,6 @@ public class VideoController : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     {
         minimizeScreenButton.gameObject.SetActive(false);
         maxmizeScreenButton.gameObject.SetActive(true);
-
-        // videoArea.anchorMin = new Vector2(0.15f, 0.15f);
-        // videoArea.anchorMax = new Vector2(0.85f, 0.80f);
 
         videoArea.localScale = new Vector3(0.75f, 0.75f, 1f);
         videoArea.anchoredPosition = new Vector2(0, -16);
