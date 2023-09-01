@@ -132,7 +132,7 @@ public class VideoController : MonoBehaviour
 
     public void LoadVideo(string name)
     {
-        string temp = Application.dataPath + "/Videos/" + name;
+        string temp = $"https://pedrohenriquediasbatista.github.io/quiz-journey-project-videos/{name}";
         if (_videoPlayer.url == temp) return;
 
         _videoPlayer.url = temp;

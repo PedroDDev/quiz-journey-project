@@ -48,7 +48,7 @@ public class HUDController : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void Start()
+    public void StartGame()
     {
         SceneManager.LoadScene("Demo");
     }
