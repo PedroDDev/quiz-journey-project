@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 1055906327}
   - component: {fileID: 1055906326}
   - component: {fileID: 1055906330}
+  - component: {fileID: 1055906331}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -760,6 +761,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1055906331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055906325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9040b6b2c7f6ef34ba4e5ed91d6586d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodEndHUD: {fileID: 0}
+  badEndHUD: {fileID: 0}
+  warningPanel: {fileID: 0}
 --- !u!1 &1070102074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1563,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1965511844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1055906331}
+        m_TargetAssemblyTypeName: HUDController, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1965511844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,6 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96974523b74b7dd48abd7d1b4cf2f6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isChanging: 0
 --- !u!95 &2014792512
 Animator:
   serializedVersion: 5

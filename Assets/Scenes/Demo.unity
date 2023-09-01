@@ -1126,7 +1126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.5620117}
+  m_AnchoredPosition: {x: 0, y: 1.5}
   m_SizeDelta: {x: 28.508, y: 25.932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &126119239
@@ -2313,7 +2313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -67.79999, y: -27.900024}
+  m_AnchoredPosition: {x: -68, y: -28}
   m_SizeDelta: {x: 164.5871, y: 167.8278}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &399715423
@@ -2363,18 +2363,6 @@ MonoBehaviour:
       - m_Target: {fileID: 907207059}
         m_TargetAssemblyTypeName: VideoController, Assembly-CSharp
         m_MethodName: ClosePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3438,18 +3426,6 @@ MonoBehaviour:
           m_StringArgument: "LGPD - V\xEDdeo 2_ Atores e Tratamento de Dados.mp4"
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &516831978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3583,7 +3559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 391.67}
+  m_AnchoredPosition: {x: 0, y: 391.5}
   m_SizeDelta: {x: -683.371, y: -873.438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522349319
@@ -4032,18 +4008,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "LGPD - V\xEDdeo 3_ Fiscais da LGPD.mp4"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &571821452
@@ -7499,7 +7463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 391.67}
+  m_AnchoredPosition: {x: 0, y: 391.5}
   m_SizeDelta: {x: -683.371, y: -873.438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &941901152
@@ -8561,7 +8525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1090452991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8579,7 +8543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.5620117}
+  m_AnchoredPosition: {x: 0, y: 1.5}
   m_SizeDelta: {x: 28.508, y: 25.932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1090452992
@@ -8653,6 +8617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96974523b74b7dd48abd7d1b4cf2f6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isChanging: 0
 --- !u!1 &1095993779
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,7 +11315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1812.085, y: -16}
+  m_AnchoredPosition: {x: -1812, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1356513715 stripped
@@ -11567,7 +11532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -1923, y: 167.32959}
+  m_AnchoredPosition: {x: -1923, y: 167.5}
   m_SizeDelta: {x: 1878.0083, y: 305.018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1378607024
@@ -12384,18 +12349,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: "LGPD - V\xEDdeo 4_ Dados Sens\xEDveis e Direitos dos
             Titulares de Dados.mp4"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1452569022
@@ -13338,7 +13291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 121, y: 106.7}
+  m_AnchoredPosition: {x: 121, y: 106.5}
   m_SizeDelta: {x: 158.7522, y: 149.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480473467
@@ -13385,18 +13338,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 41229347}
         m_TargetAssemblyTypeName: HUDController, Assembly-CSharp
         m_MethodName: BackToMenu
@@ -13771,18 +13712,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "LGPD - V\xEDdeo 1_ Apresenta\xE7\xE3o.mp4"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1495437129
@@ -16359,18 +16288,6 @@ MonoBehaviour:
           m_StringArgument: "LGPD - V\xEDdeo 5_ Bases Legais para Tratamento.mp4"
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1090452995}
-        m_TargetAssemblyTypeName: FadeController, Assembly-CSharp
-        m_MethodName: SetFade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1744678146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16549,7 +16466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0009765625, y: -1125}
+  m_AnchoredPosition: {x: 0, y: -1125}
   m_SizeDelta: {x: 37.886, y: 30.308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1756302398
@@ -16877,7 +16794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -235.91, y: 106.7}
+  m_AnchoredPosition: {x: -236, y: 106.5}
   m_SizeDelta: {x: 393.6891, y: 138.5356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1831790483
@@ -17645,7 +17562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 56.5, y: 43}
+  m_AnchoredPosition: {x: 56, y: 43}
   m_SizeDelta: {x: 53.7194, y: 53.719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1950178879
@@ -18608,7 +18525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1816.9146, y: -13}
+  m_AnchoredPosition: {x: -1817, y: -13}
   m_SizeDelta: {x: 276.9763, y: 184.7341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023872489
